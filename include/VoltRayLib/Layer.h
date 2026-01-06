@@ -12,6 +12,9 @@ namespace VoltR
     virtual void OnUpdate(float dt) {}
     virtual void OnRender() {}
 
+    virtual void OnAttach() {};
+    virtual void OnDetach() {};
+
     template <std::derived_from<Layer> T, typename... Args>
     void TransitionTo(Args &&...args)
     {
