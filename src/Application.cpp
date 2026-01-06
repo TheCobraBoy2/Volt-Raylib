@@ -21,6 +21,7 @@
 #include <raylib.h>
 
 #include <print>
+#include <assert.h>
 
 namespace VoltR
 {
@@ -70,5 +71,11 @@ namespace VoltR
   void Application::Stop()
   {
     m_Running = false;
+  }
+
+  Application &Application::Get()
+  {
+    assert(s_Application);
+    return *s_Application;
   }
 }
